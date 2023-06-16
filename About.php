@@ -11,6 +11,7 @@
         <a href="HomePage.php" style="text-decoration:none"><b>Uthangs</b></a>
         <div style="display: flex;">
             <button class="top-bar-btn" onclick="location.href = 'HomePage.php';">Home</button>
+            <button class="top-bar-btn" onclick="location.href = 'Items.php';">Items</button>
             <button class="top-bar-btn" onclick="location.href = 'About.php';">About</button>
             <button class="top-bar-btn" onclick="location.href = 'logout.php';">Log out</button>
         </div>
