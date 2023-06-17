@@ -31,7 +31,7 @@
 
         $id = $row['d_id'];
 
-        $sql2 = "INSERT INTO history (transaction, d_id, date) VALUES ('$text', $id, '$ddate')";
+        $sql2 = "INSERT INTO history (transaction, d_id, name, date) VALUES ('$text', $id, '$name', '$ddate')";
         $result2 = $conn->query($sql2);
 
 

@@ -31,10 +31,13 @@ $text = "Removed $name";
   $result1 = $conn->query($sql2);
 
 $sql = "DELETE FROM debtors WHERE d_id=$id;";
+$sql3 = "DELETE FROM uthangs WHERE d_id=$id;";
+
 
 
 if ($conn->query($sql) === TRUE) {
   echo "Record deleted successfully";
+  $result3 = $conn->query($sql3);
 } else {
   echo "Error deleting record: " . $conn->error;
 }

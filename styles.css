@@ -165,6 +165,12 @@ html, body {
     border-radius: 25px 0px 0px 25px;
     border: none;
 }
+.search-input1 {
+    padding: 15px 15px;
+    font-weight: 700;
+    border-radius: 25px 25px 25px 25px;
+    border: none;
+}
 
 .search-btn {
     color: white;
@@ -215,6 +221,7 @@ html, body {
     box-shadow: 0 0 2px black;
     font-weight: 700;
     transition: .1s;
+    cursor: pointer;
 }
 
 .del-btn:hover {
@@ -319,6 +326,24 @@ img.avatar {
     text-align: center;
     font-size: 15px;
 
+}
+
+.table-container1 {
+    padding: 20px 0px 40px 60px;
+    font-size: 20px;
+    width: 100%;
+    border: #52AA52;
+}
+
+.transaction-th1 {
+    font-size: 20px;
+    text-shadow: 0 0 5px rgb(0, 0, 0);
+}
+
+.tb-transac1 {
+    text-align: center;
+    font-size: 18px;
+    text-shadow: 0 0 3px rgb(0, 0, 0);
 }
 
 /* The Modal (background) */

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Debtor</title>
+  <title>Customer Box Preview</title>
   <link rel="stylesheet" href="style3.css">
   <script>
     // Get the modal
@@ -163,8 +163,8 @@
         }
 
         $id = $_REQUEST["bid"];
-        $name = $_REQUEST["bname"];
-        $sql = "SELECT h_id, transaction, name, date_format((date), '%m/%d/%Y') AS date FROM history WHERE d_id = '$id' ORDER BY h_id DESC;";
+
+        $sql = "SELECT h_id, transaction, date FROM history WHERE d_id = $id ORDER BY h_id DESC";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -173,6 +173,7 @@
             echo
               "<tr class='tb transac'>
                         <!-- items -->
+                        
                         <td>" . $row["h_id"] . "</td>
                         <!-- quantity -->
                         <td>" . $row["transaction"] . "</td>
@@ -193,11 +194,10 @@
   <div class="top-bar-container">
     <a href="HomePage.php" style="text-decoration:none"><b class="uthangs">Uthangs</b></a>
     <div style="display: flex;">
-            <button class="top-bar-btn" onclick="location.href = 'HomePage.php';">Home</button>
-            <button class="top-bar-btn" onclick="location.href = 'Items.php';">Items</button>
-            <button class="top-bar-btn" onclick="location.href = 'About.php';">About</button>
-            <button class="top-bar-btn" onclick="location.href = 'logout.php';">Log out</button>
-        </div>
+      <button class="top-bar-btn" onclick="location.href = 'HomePage.php';">Home</button>
+      <button class="top-bar-btn" onclick="location.href = 'About.php';">About</button>
+      <button class="top-bar-btn" onclick="location.href = 'logout.php';">Log out</button>
+    </div>
   </div>
   <div class="customer-box-preview-container">
     <div style="display:flex; flex-direction: column;">
@@ -283,8 +283,8 @@
                         <!-- Total -->
                         <td>₱" . $row["total"] . "</td>
                         <td>" . $row["date"] . "</td>
-	                    <td class='td-class'><a href='deleterec.php?  &debtorid=$id &debtor=$name &total=" . $row["total"] . " &bid=" . $row["u_id"] . " &bname=" . $row["item_name"] . "&quantity=" . $row["quantity"] . "' class='delbtn' style='text-decoration:none;'>Pay </a>  
-	                    <a href='edit.php? &debtorid=$id &debtor=$name &bid=" . $row["u_id"] . " &item=" . $row["item_name"] . "&quantity=" . $row["quantity"] . "' class='editbtn' style='text-decoration:none;'>Edit </a>    </td></tr>";
+	                    <td class='td-class'><a href='deleterec.php? &debtor=$name &total=" . $row["total"] . " &bid=" . $row["u_id"] . " &bname=" . $row["item_name"] . "&quantity=" . $row["quantity"] . "' class='delbtn' style='text-decoration:none;'>Pay </a>  
+	                    <a href='edit.php? &bid=" . $row["u_id"] . " &bname=" . $row["item_name"] . "&quantity=" . $row["quantity"] . "' class='editbtn' style='text-decoration:none;'>Edit </a>    </td></tr>";
             }
           } else {
             echo "No Record";

@@ -17,6 +17,7 @@
 
 // sql to delete a record
 $debtor = $_REQUEST["debtor"];
+$debtor_id = $_REQUEST["debtorid"];
 $bname = $_REQUEST["bname"];
 $quantity = $_REQUEST["quantity"];
 $total = $_REQUEST["total"];
@@ -27,9 +28,9 @@ $sql = "DELETE FROM uthangs WHERE u_id=$id;";
 
 if ($conn->query($sql) === TRUE) {
   echo "Record deleted successfully";
-    $text = "Paid $bname x $quantity ($total) from $debtor";
-  $sql2 = "INSERT INTO history (transaction, d_id, date) VALUES ('$text',
-  '$id', '$ddate')";
+    $text = "Paid $bname x $quantity (₱$total) from $debtor";
+  $sql2 = "INSERT INTO history (transaction, d_id, name,  date) VALUES ('$text',
+  '$debtor_id', '$debtor', '$ddate')";
   $result1 = $conn->query($sql2);
 } else {
   echo "Error deleting record: " . $conn->error;

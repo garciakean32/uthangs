@@ -34,13 +34,15 @@ CREATE TABLE uthangs(
    quantity int NOT NULL, 
    added_on datetime NOT NULL,
    updated_at datetime NOT NULL,
-   FOREIGN KEY(item_id) REFERENCES items(item_id));
+   FOREIGN KEY(item_id) REFERENCES items(item_id),
+   FOREIGN KEY(d_id) REFERENCES debtors(d_id) ON DELETE CASCADE ON UPDATE CASCADE);
 
 CREATE TABLE history(
    h_id int PRIMARY KEY AUTO_INCREMENT,
    transaction text NOT NULL,
    d_id int NOT NULL,
-   date datetime NOT NULL);
+   name varchar(255) NOT NULL,
+   date date NOT NULL);
 
 INSERT INTO category(category_name) VALUES
 ('Goods'),
@@ -62,12 +64,3 @@ INSERT INTO items (item_id, item_name, price, category_id) VALUES
 (8, 'Bleach', '45.00', 4),
 (9, 'Soap', '25.00', 4),
 (10, 'Beer', '120.00', 5);
-
-
-INSERT INTO users (id, username, password) VALUES
-(1, 'admin', 'admin123');
-
-
-SELECT d_name, phone, address, date_format((created_at), '%m/%d/%Y') AS date, SUM(quantity*price) AS total FROM uthangs JOIN items ON uthangs.item_id=items.item_id JOIN debtors ON debtors.d_id=uthangs.d_id;
-
-SELECT d_name, phone, address, date_format((created_at), '%m/%d/%Y') AS date, SUM(quantity*price) AS total FROM uthangs JOIN items ON uthangs.item_id=items.item_id JOIN debtors ON debtors.d_id=uthangs.d_id WHERE uthangs.d_id = 1;

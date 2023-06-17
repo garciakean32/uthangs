@@ -2,8 +2,8 @@
 <html>
 
 <head>
-  <title>Home Page</title>
-  <link rel="stylesheet" href="style2.css">
+  <title>Home - Uthangs</title>
+  <link rel="stylesheet" href="styles.css">
   <script>
     // Get the modal
     var modal = document.getElementById('id01');
@@ -70,7 +70,7 @@
   </div>
   <div id="transac" class="modal">
 
-    <form name="form1" id="form1" class="modal-content animate" action="insertdebtor.php" method="post">
+    <form name="form1" id="form1" class="modal-content animate" action="Transactions.php" method="post">
 
       <div class="imgcontainer">
         <span onclick="document.getElementById('transac').style.display='none'; clearInput()" class="close"
@@ -94,7 +94,7 @@
           die("ERROR: Could not connect. "
             . mysqli_connect_error());
         }
-        $sql = "SELECT h_id, transaction, date FROM history ORDER BY h_id DESC";
+        $sql = "SELECT h_id, transaction, date_format((date), '%m/%d/%Y') AS date FROM history ORDER BY h_id DESC LIMIT 10";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -115,6 +115,7 @@
         }
         $conn->close(); ?>
       </table>
+      <center><button class="confirm-btn" type="submit">More</button></center>
     </form>
   </div>
 
@@ -123,11 +124,11 @@
   <div class="top-bar-container">
     <a href="HomePage.php" style="text-decoration:none"><b>Uthangs</b></a>
     <div style="display: flex;">
-      <button class="top-bar-btn" onclick="location.href = 'HomePage.php';">Home</button>
-      <button class="top-bar-btn" onclick="location.href = 'Items.php';">Items</button>
-      <button class="top-bar-btn" onclick="location.href = 'About.php';">About</button>
-      <button class="top-bar-btn" onclick="location.href = 'logout.php';">Log out</button>
-    </div>
+            <button class="top-bar-btn" onclick="location.href = 'HomePage.php';">Home</button>
+            <button class="top-bar-btn" onclick="location.href = 'Items.php';">Items</button>
+            <button class="top-bar-btn" onclick="location.href = 'About.php';">About</button>
+            <button class="top-bar-btn" onclick="location.href = 'logout.php';">Log out</button>
+        </div>
   </div>
   <div class="listOfDebtors-sub-remove-container">
     <div class="head-text">List of Debtors</div>
@@ -178,7 +179,7 @@
           <div>
               <p name ='name' id='name'>Name: " . $row["d_name"] . "</p>
               <p>Date Started: " . $row["date"] . "</p>
-              <p>Total Balance: " . $row1["total"] . "</p>
+              <p>Total Balance: ₱" . $row1["total"] . "</p>
               </div>
            <form class='del-btn-container'action = 'deletedebtor.php' method = 'POST'>
             <input type = 'hidden' name= 'id' value=" . $row["d_id"] . ">
@@ -188,13 +189,10 @@
       }
     } else {
       echo "No Record";
-      $sql = "TRUNCATE TABLE debtors";
-      $result = $conn->query($sql);
 
     }
+
     $conn->close();
-
-
     ?>
   </div>
 

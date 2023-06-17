@@ -22,5 +22,5 @@ $sql = "UPDATE debtors SET d_name='$name', phone='$phone', address='$address' WH
 
 
 $conn->close();
-header("Location:debtorpage.php");
+header("Location:HomePage.php");
 ?>

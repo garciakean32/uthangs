@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Home Page</title>
+    <title>About</title>
     <link rel="stylesheet" href="KEAN css.css">
 </head>
 
@@ -43,9 +43,8 @@
                 <img src="img/Kean.png" alt="Garcia">
                 <div class="name">Kean Garcia</div>
                 <div class="design">Designer</div>
-                <div class="abaot"> Team leading designer about css and html. He take all
-                    the primary design and discuss it with the team Living
-                    in ??, ?? years old
+                <div class="abaot"> Team designer about css and html. He take all
+                    the primary design and discuss it with the team. 
                 </div>
 
                 <div class="social-links">
@@ -59,9 +58,9 @@
                 <img src="img/Juaton.png" alt="Juaton">
                 <div class="name">Mark Jundy Juaton</div>
                 <div class="design">Lead Programmer</div>
-                <div class="abaot"> Team leading programmer about all language. He take
+                <div class="abaot"> Team leading programmer about all languages. He take
                     in charge of codes being created by his members and giving out
-                    intstruction.Living in ??, ?? years old
+                    intstruction.
                 </div>
 
                 <div class="social-links">
@@ -76,7 +75,7 @@
                 <div class="name">Ray Anthony Ibarra</div>
                 <div class="design">Assistant Designer</div>
                 <div class="abaot"> Team assistant designer about css and html assisting the
-                    lead designer in making out website design. Living in ??, ?? years old
+                    designer in making out website design. 
                 </div>
 
                 <div class="social-links">

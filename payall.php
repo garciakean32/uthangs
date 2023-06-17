@@ -26,8 +26,8 @@ $sql = "DELETE FROM uthangs WHERE d_id = '$id';";
 if ($conn->query($sql) === TRUE) {
   echo "Record deleted successfully";
   $text = "Paid Full Balance of ₱$total from $bname";
-  $sql2 = "INSERT INTO history (transaction, d_id, date) VALUES ('$text',
-  '$id', '$ddate')";
+  $sql2 = "INSERT INTO history (transaction, d_id, name, date) VALUES ('$text',
+  '$id', '$bname', '$ddate')";
   $result1 = $conn->query($sql2);
 } else {
   echo "Error deleting record: " . $conn->error;

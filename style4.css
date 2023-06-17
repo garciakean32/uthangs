@@ -50,7 +50,7 @@ b {
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 700;
     text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.74);
 }
@@ -58,8 +58,7 @@ b {
 /* new edit */
 .container {
     display: flex;
-    justify-content:center;
-    margin: 1rem;
+    justify-content: center;
     gap: 50px;
 }
 
@@ -71,7 +70,7 @@ b {
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 19px;
     font-weight: 600;
     text-shadow: 1px 2px 0px rgb(255, 255, 255);
 }
@@ -82,13 +81,14 @@ h2 {
     justify-content: center;
     border-radius: 20px;
     margin: 5px;
-    padding: 1.5rem;
+    padding: 1rem;
     width: 20rem;
     cursor: pointer;
     border: none;
     background-color: #52AA52;
-    box-shadow: 0 2px 0px #666;
+    box-shadow: 0 4px 0px #666;
     font-size: 20px;
+    transition: .3s;
 }
 
 .NAVBTN:hover {
@@ -101,11 +101,26 @@ h2 {
     transform: translateY(2px);
 }
 
+.clicked{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    margin: 5px;
+    padding: 1rem;
+    width: 20rem;
+    border: none;
+    font-size: 20px;
+    background-color: #397739;
+    transform: translateY(2px);
+    box-shadow: 0 2px 0px #666;
+    transition: .3s;
+}
 .tableContainer {
     display: grid;
     flex-direction: column;
     grid-template-columns: auto auto;
-    max-height: 561px;
+    max-height: 30rem;
     overflow-y: scroll;
 }
 
@@ -134,10 +149,10 @@ table, th, td {
     border: 2px solid white;
     border-collapse: collapse;
     max-width: fit-content;
-    padding: 1rem;
+    padding: .8rem;
     overflow-x: auto;
-    margin: 1rem;
-    font-size: 2rem;
+    margin: .8rem;
+    font-size: 1.5rem;
 }
 
 tr:nth-child(even) {
